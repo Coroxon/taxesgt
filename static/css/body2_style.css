@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url('fuentes/static/Nunito-Regular.ttf') format('truetype');
+}
+
+/* Estilos del contenido principal */
+#Content {
+    display: flex; /* Utiliza flexbox para dividir en dos columnas */
+    /*justify-content: center;  Centra el contenido horizontalmente */
+    /*align-items: center;  Centra el contenido verticalmente */
+    height: 82.6vh; /* Toma el 100% de la altura del viewport */
+    margin: 0 auto; /* Centra el contenedor horizontalmente en la pantalla */
+    margin-left: 85px; /* Ancho del sidebar */
+    padding: 5px; /* Espacio para el contenido principal */
+    background-color: #f0f0f0; /* Color de fondo */
+}
+#search-box {
+    width: 300px;
+    height: 20px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+#search-button {
+    height: 40px;
+}

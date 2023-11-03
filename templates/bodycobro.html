@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/5/yeti/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar_style.css') }}">
+    <title>INICIO</title>
+</head>
+<body>
+    <div class="sidebar">
+            <ul>
+                <li style="margin-top: 120px;"><a href="#" onclick="mostrarPopup()"><i class="fas fa-plus"></i> Nuevo </a></li>
+                <li><a href="#">2023</a></li>
+                <li><a href="#">Enero</a></li>
+                <li><a href="#">Febreo</a></li>
+                <li><a href="#">Marzo</a></li>
+                <li><a href="#">Abril</a></li>
+                <li><a href="#">Mayo</a></li>
+                <li><a href="#">Junio</a></li>
+                <li><a href="#">Julio</a></li>
+                <li><a href="#">Agosto</a></li>
+                <li><a href="#">Septiembre</a></li>
+                <li><a href="#">Octubre</a></li>
+                <li><a href="#">Noviembre</a></li>
+                <li><a href="#">Diciembre</a></li>
+            </ul>
+    </div>
+    <div style="margin-top: 114px;" class="main-container">
+        <form class="btn-cliente" action="/buscar" method="get">
+            <input type="text" name="q" placeholder="Buscar...">
+        </form> 
+        <div class="title">Todos</div>
+        <div class="line"></div>
+        <label class="titulo" for="nombre">Número</label>
+        <label class="titulo" for="correo">Emision</label>
+        <label class="titulo" for="eelefono">Nombre</label>
+        <label class="titulo" for="dpi">Total</label>
+        <label class="titulo" for="tipo">Acción</label>
+        <div class="line2"></div>
+        <ul id="cobroslista" class="list-group">
+            <li class="list-group-item"></li>
+        </ul>
+    </div>
+    <div id="miPopup2" class="popupcobro">
+        <div class="popup-header">
+            <span id="dynamicText"></span>
+            <span class="close" onclick="cerrarPopup()">SALIR</span>
+        </div><br><br>
+        <form id="formcobro">
+            <div id="formulario0" class="formulario-inlinet">
+            <span class="close" onclick="mostrarPopup();">Detalle</span><br>
+            </div>
+            <div id="formulario1" class="formulario-inlinet">
+                <label id="titulo">Cliente</label><br>
+            </div>
+            <div id="formulario1" class="formulario-inlinef">
+                <label id="titulo" for="nit/cui">NIT/CUI:</label><br>
+                <input class="input" style="width: 100%; height: 100%;" type="text" placeholder="NIT/CUI" id="nit/cui" name="nit/cui" required>
+            </div>
+            <div id="formulario2" class="formulario-inlinef">
+                <label id="titulo" for="nombre">Nombre:</label><br>
+                <input class="input" style="width: 100%; height: 100%;" type="text" placeholder="nombre" id="nombre" name="nombre" required>
+            </div>
+            <div id="formulario3" class="formulario-inlinef">
+                <label id="titulo" for="direccion">Direccion:</label><br>
+                <input class="input" style="width: 100%; height: 100%;" type="text" placeholder="Direccion" id="direccion" name="direccion" required>
+            </div>
+            <div id="formulario4" class="formulario-inlinef">
+                <label id="titulo" for="telefono">Teléfono:</label><br>
+                <input class="input" style="width: 100%; height: 150%;" type="text" placeholder="Télefono" id="telefono" name="telefono" required>
+            </div>
+            <div id="formulario5" class="formulario-inlinet"style="margin-top: 5%;">
+                <label id="titulo"></label>Documento</label><br>
+            </div>
+            <div id="formulario6" class="formulario-inlinef">
+                <label id="titulo" for="tp_doc">Tipo Documento:</label>
+                <select class="input" style="width: 20%; height: 100%;" id="tp_doc" name="tp_doc" required>
+                    <option value="" selected disabled></option>
+                    <option value="1">Recibo</option>
+                    <option value="2">Factura</option>
+                </select>
+                <label style="margin-left: 5%;" for="emision">Emision:</label>
+                <input class="input" style="width: 20%; height: 100%;" type="text" id="emision" name="emision" required>
+            </div>
+            <div id="formulario7" class="formulario-inlinef" >
+                <label style="margin-left: 9%;" for="numero">Número:</label>
+                <input class="input" style="width: 20%; height: 100%;" type="text" placeholder="00000" id="numero" name="numero" required>
+                <label style="margin-left: 8%;"  for="total">Total:</label>
+                <input class="input" style="width: 20%; height: 100%;" type="text" placeholder="Q 0.00" id="total" name="total">
+            </div>
+            <button  id="guardar" class="boton-guardar">Guardar</button>
+        </form>
+    </div>
+    <div id="miPopup" class="popupcli1">
+        <div class="popup-header">
+            <span style="text-align: left;" id="dynamicText1"></span>
+            <span class="close" onclick="cerrarPopup1()">SALIR</span>
+        </div>
+        <form id="formlineacobro">
+            <div id="formulario1" class="formulario-inlinedet" style="width: 15%;">
+                <label id="titulo" for="codigo">Código</label><br>
+                <input style="width: 100%; height: 100%;" class="input" id="codigo" name="codigo" required>
+            </div>
+            <div id="formulario2" class="formulario-inlinedet" style="width: 20%;">
+                <label for="nombre">Nombre</label><br>
+                <input style="width: 100%; height: 100%;" class="input" type="text" id="nombre" name="nombre" required>
+            </div>
+            <div id="formulario3" class="formulario-inlinedet"style="width: 15%;">
+                <label id="titulo" for="precio">Precio</label><br>
+                <input style="width: 100%; height: 100%;" class="input" type="text"  id="precio" name="precio" required>
+            </div>
+            <div id="formulario4" class="formulario-inlinedet"style="width: 15%;">
+                <label  for="cantidad">Cantidad</label><br>
+                <input style="width: 100%; height: 100%;" class="input" type="text" id="cantidad" name="cantidad" required>
+            </div>
+            <div id="formulario5" class="formulario-inlinedet"style="width: 15%;">
+                <label  for="subtotal">Subtotal</label><br>
+                <input style="width: 100%; height: 100%;"class="input" type="text" id="subtotal" name="subtotal">
+            </div>
+            <div id="formulario4" class="formulario-inlinedet">
+                <button  id="guardar" class="boton-guardar">Guardar</button>
+            </div>
+        </form>
+        </form> 
+            <label class="titulo1" for="nombre">Código</label>
+            <label class="titulo1" for="correo">nombre</label>
+            <label class="titulo1" for="eelefono">Precio</label>
+            <label class="titulo1" for="dpi">Cantidad</label>
+            <label class="titulo1" for="dpi">subtotal</label>
+            <label class="titulo1" for="tipo">Acción</label>
+            <div class="line"></div>
+            <ul id="lineacobrolista" class="list-group">
+                <li class="list-group-item"></li>
+            </ul>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtén la fecha actual
+            const fechaActual = new Date();
+    
+            // Obtiene los componentes de la fecha (día, mes, año)
+            const dia = fechaActual.getDate().toString().padStart(2, '0'); // Agrega ceros al día si es necesario
+            const mes = (fechaActual.getMonth() + 1).toString().padStart(2, '0'); // Agrega ceros al mes si es necesario
+            const año = fechaActual.getFullYear().toString().slice(-2); // Obtiene los últimos dos dígitos del año
+    
+            // Formatea la fecha en el formato DD-MM-YY
+            const fechaFormateada = `${dia}-${mes}-${año}`;
+    
+            // Llena el campo de entrada con la fecha formateada
+            document.getElementById('emision').value = fechaFormateada;
+        });
+    </script>
+    <script src="/static/cobros.js"></script>
+</body>
+
+</html>

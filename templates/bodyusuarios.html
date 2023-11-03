@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/5/yeti/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar_style.css') }}">
+    <title>INICIO</title>
+</head>
+<body>
+    <div class="sidebar">
+            <ul>
+                <li style="margin-top: 120px;"><a href="#" onclick="mostrarPopup()"><i class="fas fa-plus"></i> Nuevo</a></li>
+                <li><a href="#"><i class="fas fa-check"></i> Activo</a></li>
+                <li><a href="#"><i class="fas fa-user"></i> Roles</a></li>
+            </ul>
+    </div>
+    <div style="margin-top: 114px;" class="main-container">
+        <form class="btn-cliente" action="/buscar" method="get">
+            <input type="text" name="q" placeholder="Buscar...">
+        </form> 
+        <div class="title">Todos</div>
+        <div class="line"></div>
+        <label class="titulo" for="nombre"> Nombre</label>
+        <label class="titulo" for="correo">Ususario</label>
+        <label class="titulo" for="eelefono">Correo</label>
+        <label class="titulo" for="dpi">Teléfono</label>
+        <label class="titulo" for="tipo">Rol</label>
+        <label class="titulo" for="accion">Acción</label>
+        <div class="line2"></div>
+        <ul id="usuarioslista" class="list-group">
+            <li class="list-group-item"></li>
+        </ul>
+    </div>
+    <div id="miPopup" class="popupcli">
+        <div class="popup-header">
+            <span id="dynamicText"></span>
+            <span class="close" onclick="cerrarPopup()">SALIR</span>
+        </div><br><br>
+        <form id="formusuario">
+            <div id="formulario1" class="formulario-inline"> 
+                <label for="desactivado">Desactivado</label>
+                <input type="checkbox" id="desactivado" name="desactivado" value="valor">
+            </div><br>
+            <div id="formulario2" class="formulario-inline">
+                <label id="titulo" for="usuario">Usuario:</label><br>
+                <input class="input" type="text" placeholder="usuario" id="usuario" name="usuario" required>
+            </div>
+            <div id="formulario3" class="formulario-inline">
+                <label id="titulo" for="nombre">Nombre:</label><br>
+                <input class="input" type="text" placeholder="nombre" id="nombre" name="nombre" required>
+            </div>
+            <div id="formulario4" class="formulario-inline">
+                <label for="correo">Correo:</label><br>
+                <input class="input" type="text" placeholder="ejemplo@gmail.com" id="correo" name="correo" required>
+            </div>
+            <div id="formulario5" class="formulario-inline">
+                <label  for="telefono">Teléfono:</label><br>
+                <input class="input" type="text" placeholder="0000 0000" id="telefono" name="telefono" required>
+            </div>
+            <div id="formulario6" class="formulario-inline">
+                <label id="titulo" for="contra">Contraseña:</label><br>
+                <input class="input" type="password" placeholder="Contraseña" id="contra" name="contracorreo" required>
+            </div>
+            <div id="formulario7" class="formulario-inline">
+                <label id="titulo" for="valcontra">Confirmar Contraseña:</label><br>
+                <input class="input" type="password" placeholder="Contraseña" id="valcontra" name="contracorreo" required>
+            </div>
+            <div id="formulario8" class="formulario-inline">
+                <label id="titulo" for="rol">Tipo de Usuario:</label><br>
+                <select class="input" id="rol" name="rol" required>
+                <option value="1">Contador General</option>
+                <option value="2">Contador Auxiliar</option>
+                </select>
+            </div>
+            <button  id="guardar" class="boton-guardar">Guardar</button>
+        </form>
+    </div>
+    <script src="/static/usuarios.js"></script>
+</body>
+
+</html>

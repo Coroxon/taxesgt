@@ -1,0 +1,246 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url('fuentes/static/Nunito-Regular.ttf') format('truetype');
+}
+/* Estilos del sidebar */
+.sidebar {
+    height: 100%;
+    width: 150px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #078484;
+    overflow-x: hidden;
+}
+
+.sidebar1 {
+    overflow-x: hidden;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar ul li {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.sidebar ul li a i {
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+}
+
+.sidebar ul li a:hover {
+    background-color: #065f5f; /* Color de fondo al pasar el mouse */
+}
+
+.formproducto{
+    padding: 10px 20px 30px 40px;
+}
+
+.popupcli {
+    display: none;
+    position: absolute;
+    transform: translate(-50%, -115%);
+    /*top: 130px;*/
+    left: 50%;
+    width: 57%; /* Ancho deseado */
+    max-width: 1583px; /* Altura deseada */
+    height: auto;
+    max-height: 90vh;
+    background-color: #f2f2f2;
+    border: 1px solid #d4d4d4;
+    z-index: 1;
+}
+.popupcli1 {
+    display: none;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    /*top: 130px;*/
+    left: 50%;
+    width: 57%; /* Ancho deseado */
+    max-width: 1583px; /* Altura deseada */
+    height: auto;
+    max-height: 90vh;
+    background-color: #f2f2f2;
+    border: 1px solid #d4d4d4;
+    z-index: 1;
+}
+
+.popupcobro {
+    display: none;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    /*top:   130px;*/
+    left: 50%;
+    width: 37%; /* Ancho deseado */
+    max-width: 1583px; /* Altura deseada */
+    height: auto;
+    max-height: 90vh;
+    background-color: #f2f2f2;
+    border: 1px solid #d4d4d4;
+    z-index: 1;
+}
+
+/* Estilo para el encabezado del popup */
+.popup-header {
+    background-color: #078484; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 10px; /* Espaciado interior */
+    text-align: center; /* Centra el texto */
+    align-items: center;
+    font-weight: bold; /* Texto en negrita */
+    font-size: 40px;
+}
+.fa-right-from-bracket {
+    font-size: 40px;
+  }
+
+/* Estilos para los mensajes de error */
+.popup-content {
+    padding: 20px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+.formulario-inline {
+    display: inline-block;
+    /* Ajustar el ancho, el margen y el espacio entre los formularios según sea necesario */
+    margin-right: 2.5%; /* Espacio entre los formularios */
+    margin-left: 2.5%;
+    margin-top: 1.5%;
+    color: #083D53;
+}
+
+.formulario-inlinef {
+    /* Ajustar el ancho, el margen y el espacio entre los formularios según sea necesario */
+    margin-right: 5%; /* Espacio entre los formularios */
+    margin-left: 10%;
+    margin-top: 1.5%;
+    color: #083D53;
+}
+
+.formulario-inlinet {
+    /* Ajustar el ancho, el margen y el espacio entre los formularios según sea necesario */
+    margin-right: 2.5%; /* Espacio entre los formularios */
+    margin-left: 2.5%;
+    margin-top: 1.5%;
+    color: #083D53;
+}
+
+.formulario-inlinedet {
+    display: inline-block;
+    /* Ajustar el ancho, el margen y el espacio entre los formularios según sea necesario */
+    margin-right: 0.5%; /* Espacio entre los formularios */
+    margin-left: 0.5%;
+    margin-top: 1.5%;
+    color: #083D53;
+}
+
+.titulo{
+    margin: 0.5% 6.1%;
+ 
+}
+
+.titulo1{
+    margin: 0.5% 4%;
+    color: #045271;
+}
+
+#datos1{
+
+    margin: 20px; 
+}
+
+.input{
+    border-color: #045271;
+    color: #045271;
+    border-radius: 7px;
+}
+
+#tipoContribuyente{
+    width: 228px; /* Establece el ancho del input en 200px */
+    height: 22px;
+    border-color: #045271;
+    color: #045271;
+    border-radius: 7px;
+}
+
+/* Estilos para el botón */
+.boton-guardar {
+    background-color: #083D53; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno (arriba/abajo, izquierda/derecha) */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    display: block; /* Hace que el botón ocupe todo el ancho del contenedor */
+    margin: 2% auto; /* Centra horizontalmente */
+    text-align: center; /* Centra el texto horizontalmente */
+}
+
+/* Estilos adicionales, como hover */
+.boton-guardar:hover {
+    background-color: #04658B; /* Cambia el color de fondo al pasar el cursor */
+}
+
+.main-container{
+    background-color: #FFFFFF;
+    width: calc(100% - 150px);  /*El 100% del ancho de la pantalla menos 150px en el lado izquierdo */
+    height: 88.1%;  /*Establece la altura al 100% del viewport */
+    position: relative; /* Ajusta la posición si es necesario */
+    left: 150px; /* Deja un espacio de 150px en el lado izquierdo */
+}
+
+.title {
+    font-size: 24px;
+    color: #083D53;
+    font-weight: bold;
+    margin: 3% 6.9%;
+    margin-bottom: 1px; /* Espacio entre el título y la línea */
+}
+
+/* Estilo para la línea */
+.line {
+    color: #045271;
+    border-top: 2px solid #045271; /* Puedes ajustar el color y el grosor de la línea */
+    margin: 0% 3%;
+}
+   
+.btn-cliente{
+    border-radius: 10px;
+    margin: 1% 3%;
+}
+
+.line2 {
+    color: #045271;
+    border-top: 2px solid #045271; /* Puedes ajustar el color y el grosor de la línea */
+    margin: -0.2% 5%;
+}
+.list-group-item{
+    margin: 0% 5%;
+}
+
+.cliente-item {
+    width: 17%;
+    margin-left: 0.5%;
+    color: #045271;
+}
+

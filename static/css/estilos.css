@@ -1,0 +1,14 @@
+header {
+    position: fixed;
+    width: 100%; /* O el ancho deseado */
+    margin-top: 0px;
+    z-index: 1000; /* Asegura que el encabezado esté por encima de otros elementos */
+    /* Agrega otros estilos según tu diseño */
+}
+
+.menu-container{
+    position: fixed;
+    width: 100%; /* O el ancho deseado */
+    z-index: 1000; /* Asegura que el encabezado esté por encima de otros elementos */
+}
+

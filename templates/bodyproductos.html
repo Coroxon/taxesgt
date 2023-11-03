@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/5/yeti/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar_style.css') }}">
+    <title>INICIO</title>
+</head>
+<body>
+    <div class="sidebar">
+            <ul>
+                <li style="margin-top: 120px;"><a href="#" onclick="mostrarPopup()"><i class="fas fa-plus"></i> Nuevo </a></li>
+                <li><a href="#"><i class="fas fa-check"></i> Categoria</a></li>
+                <li><a href="#"><i class="fas fa-user"></i> Catálogo</a></li>
+            </ul>
+    </div>
+    <div style="margin-top: 114px;" class="main-container">
+        <form class="btn-cliente" action="/buscar" method="get">
+            <input type="text" name="q" placeholder="Buscar...">
+        </form> 
+        <div class="title">Todos</div>
+        <div class="line"></div>
+        <label class="titulo" for="nombre">Código</label>
+        <label class="titulo" for="correo">Nombre</label>
+        <label class="titulo" for="eelefono">tipo</label>
+        <label class="titulo" for="dpi">Precio</label>
+        <label class="titulo" for="tipo">Acción</label>
+        <div class="line2"></div>
+        <ul id="productoslista" class="list-group">
+            <li class="list-group-item"></li>
+        </ul>
+    </div>
+    <div id="miPopup" class="popupcli1">
+        <div class="popup-header">
+            <span id="dynamicText"></span>
+            <span class="close" onclick="cerrarPopup()">SALIR</span>
+        </div><br><br>
+        <form id="formproducto">
+            <div id="formulario1" class="formulario-inline"> 
+                <label for="desactivado">Desactivado</label>
+                <input type="checkbox" id="desactivado" name="desactivado" value="valor">
+            </div><br>
+            <div id="formulario2" class="formulario-inline">
+                <label id="titulo" for="codigo">Código:</label><br>
+                <input class="input" type="text" placeholder="codigo" id="codigo" name="codigo" required>
+            </div>
+            <div id="formulario3" class="formulario-inline">
+                <label id="titulo" for="nombre">Nombre:</label><br>
+                <input class="input" type="text" placeholder="nombre" id="nombre" name="nombre" required>
+            </div>
+            <div id="formulario4" class="formulario-inline">
+                <label id="titulo" for="rol">Tipo:</label><br>
+                <select class="input" id="rol" name="rol" required>
+                <option value="1">Producto</option>
+                <option value="2">Servicio</option>
+                </select>
+            </div>
+            <div id="formulario5" class="formulario-inline" >
+                <label for="descripcion">Descripción:</label><br>
+                <input style="width: 150%; height: 450%;" class="input" type="text" placeholder="Detalle" id="descripcion" name="descripcion" required>
+            </div>
+            <div id="formulario6" class="formulario-inline">
+                <label  for="precio">Precio:</label><br>
+                <input class="input" type="text" placeholder="Q 0.00" id="precio" name="precio" required>
+            </div>
+            <button  id="guardar" class="boton-guardar">Guardar</button>
+        </form>
+    </div>
+    <script src="/static/productos.js"></script>
+</body>
+
+</html>

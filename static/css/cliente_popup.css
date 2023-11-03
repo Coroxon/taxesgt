@@ -1,0 +1,37 @@
+/* Estilos para el popup */
+#popup {
+    display: none;
+    position: fixed;
+    top: 50%; /* centra verticalmente */
+    left: 50%; /* Centra horizontalmente*/
+    /*transform: translate(50%, 50%);; Centra el contenido */
+    width: 222px;  /*Ancho deseado */
+    height: 222px;  /*Altura deseada */
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1;
+    border: 1px solid #888;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    /*overflow: auto;*/
+    /*height: 100%;*/
+}
+
+.popup-content {
+    /*background-color: #fff;*/
+    /*margin: 10% auto;*/
+    padding: 30px;
+    /*border: 1px solid #888;*/
+    /*width: 80%;*/
+    /*box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);*/
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}

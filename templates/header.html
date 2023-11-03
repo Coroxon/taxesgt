@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header2">
+            <img src="{{ url_for('static', filename='images/login/circulo.png') }}" alt="Taxes GT Logo" class="imgheader">
+            <div class="bottom-row">
+                <h1>TAXES GT</h1>
+            </div>        
+        </div>
+        <div class="menu-container" style="display: flex; justify-content: space-between;">
+            <div style="display: flex; flex-wrap: nowrap;">
+                <div class="menu-item">
+                    <a href="/home" style="text-decoration: none;">
+                        <label>
+                            Home
+                        </label>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="/productos" style="text-decoration: none;">
+                        <label>
+                            Productos
+                        </label>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="/cobros" style="text-decoration: none;">
+                        <label>
+                            </i>Cobros
+                        </label>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="/clientes" style="text-decoration: none;">
+                        <label>
+                            </i>Clientes
+                        </label>
+                    </a>
+                </div>
+            </div>
+            <div class="menu-item" style="float: right;">
+                <a href="/login" style="text-decoration: none;">
+                    <label id="salir" style="color: white;">
+                        Salir
+                    </label>
+                </a>
+            </div>
+        </div>
+    </header>
+</body>
+</html>

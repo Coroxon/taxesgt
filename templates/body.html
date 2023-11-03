@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="column">
+        <form class="imgcolumn1">
+
+                <!-- Primera Columna (Texto y Formulario) -->
+                <img src="{{ url_for('static', filename='images/login/blue.png') }}" alt="Logo" class="logo">
+                <h1>TAXES GT</h1>
+                <p>CONSULTORES Y ASESORES</p>
+                <h2>INICIO DE SESION</h2>
+                <form method="POST" action="/validar">
+                <input type="text" name="usuario" placeholder="Usuario" class="textbox">
+                <input type="password" name="contrasenia" placeholder="Contraseña" class="textbox"><br>
+                <button type="submit" class="button" value="Iniciar sesión">Enviar</button><br>
+                <!-- Mensajes emergentes -->
+                <div id="emptyFieldMessage" class="popup">
+                    Por favor, completa todos los campos.
+                </div>
+                <div id="invalidCredentialsMessage" class="popup">
+                    Credenciales incorrectas. Inténtalo de nuevo.
+                </div>
+                </form>
+            
+                <!-- JavaScript para mostrar y ocultar los mensajes emergentes -->
+                <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    var form = document.querySelector('form');
+                    var emptyFieldMessage = document.getElementById('emptyFieldMessage');
+                    var invalidCredentialsMessage = document.getElementById('invalidCredentialsMessage');
+            
+                    form.addEventListener('submit', function (event) {
+                        event.preventDefault(); // Evita que se envíe el formulario automáticamente
+            
+                        var username = form.elements.usuario.value;
+                        var password = form.elements.contrasenia.value;
+            
+                        // Verifica si los campos de usuario y contraseña están vacíos
+                        if (username === "" || password === "") {
+                            emptyFieldMessage.style.display = 'block'; // Muestra el mensaje emergente
+                            return; // Detiene el flujo del código
+                        } else {
+                            emptyFieldMessage.style.display = 'none'; // Oculta el mensaje emergente
+                        }
+            
+                        // Realiza la lógica de validación de credenciales aquí
+                        // Función para validar las credenciales (debes implementarla)
+                            function validarCredenciales(username, password) {
+                                fetch('/validar', {
+                                    method: 'POST',
+                                    body: JSON.stringify({usuario: username, contrasenia: password}),
+                                    headers: {
+                                        'Content-Type': 'application/json'
+                                    }
+                                })
+                                .then(response => response.json())
+                                .then(data => {
+                                    if ('error' in data) {
+                                        // Mostrar mensaje de error correspondiente
+                                        invalidCredentialsMessage.style.display = 'block';
+                                    } else {
+                                        // Credenciales válidas, redirigir al usuario
+                                        window.location.href = data.redirect;
+                                    }
+                                })
+                                .catch(error => console.error('Error:', error));
+                            }
+                        // Si las credenciales son incorrectas, muestra el mensaje de error correspondiente
+                        if (!validarCredenciales(username, password)) {
+                            invalidCredentialsMessage.style.display = 'block'; // Muestra el mensaje emergente
+                        } else {
+                            invalidCredentialsMessage.style.display = 'none'; // Oculta el mensaje emergente
+                            // Si las credenciales son correctas, puedes enviar el formulario
+                            form.submit();
+                        }
+                    });  
+                });
+                </script>
+            </form>
+        </div>
+        <div class="column">
+            <form class="imgcolumn2">
+                <!-- Segunda Columna (Imagen) -->
+                    <img src="{{ url_for('static', filename='images/login/imglog(1).png') }}" alt="Imagen" class="centered-image">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

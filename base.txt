@@ -1,0 +1,34 @@
+funciones 
+CREATE OR REPLACE FUNCTION actualizar_monto_en_cobros()
+RETURNS VOID AS $$
+BEGIN
+    UPDATE cobros
+    SET monto = (
+        SELECT COALESCE(SUM(subtotal), 0)
+        FROM lineas_cobro
+        WHERE id_cobro = (
+            SELECT id_cobro
+            FROM lineas_cobro
+            ORDER BY id DESC
+            LIMIT 1
+        )
+    )
+    WHERE id = (
+        SELECT id_cobro
+        FROM lineas_cobro
+        ORDER BY id DESC
+        LIMIT 1
+    );
+END;
+$$ LANGUAGE plpgsql;
+
+
+
+
+
+triggers
+
+CREATE TRIGGER trigger_actualizar_monto
+AFTER INSERT ON lineas_cobro
+FOR EACH ROW
+EXECUTE FUNCTION actualizar_monto_cobros();

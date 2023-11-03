@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/5/yeti/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar_style.css') }}">
+    <title>INICIO</title>
+</head>
+<body>
+    <div class="sidebar">
+            <ul>
+                <li style="margin-top: 120px;"><a href="#"> 2023</a></li>
+                <li><a href="#">Enero</a></li>
+                <li><a href="#">Febreo</a></li>
+                <li><a href="#">Marzo</a></li>
+                <li><a href="#">Abril</a></li>
+                <li><a href="#">Mayo</a></li>
+                <li><a href="#">Junio</a></li>
+                <li><a href="#">Julio</a></li>
+                <li><a href="#">Agosto</a></li>
+                <li><a href="#">Septiembre</a></li>
+                <li><a href="#">Octubre</a></li>
+                <li><a href="#">Noviembre</a></li>
+                <li><a href="#">Diciembre</a></li>
+            </ul>
+    </div>
+    <div style="margin-top: 114px; text-align: center;" class="main-container">
+        <form class="btn-cliente" action="/buscar" method="get">
+            <span id="dynamicTextnombre" style="color: #083D53; font-weight: bold;
+            font-size: 20px;"></span>
+        </form> 
+        
+        <div style= "padding-left: 10%;">
+            <div style="text-align: center; width: 50%;">
+                <span style=" color: #083D53; font-weight: bold; font-size: 20px;">Total por Cuenta</span>
+            </div>
+            <div style="text-align: left; width: 50%; padding-left: 20px; padding: 5px; background-color: green;">
+                <h4>Ingresos</h4>
+            </div>
+            <ul style="width: 50%;" id="ingresoslista" class="list-group">
+                <li class="list-group-item"></li>
+            </ul>
+            <ul style="width: 50%;" class="list-group">
+                <li class="list-group-item" style="display: flex; justify-content: space-between; align-items: center;">
+                    <h4 style="margin: 2%; color: #083D53; ">Total Ingresos</h4>
+                    <span id="dynamicTextingreso" style="color: #083D53; font-weight: bold; font-size: 20px;"></span>
+                </li>
+            </ul>
+            <div style="text-align: left; width: 50%; padding-left: 20px; padding: 5px; background-color: red;">
+                <h4>Egresos</h4>
+            </div>
+            <ul style="width: 50%;" id="egresoslista" class="list-group">
+                <li class="list-group-item"></li>
+            </ul>
+            <ul style="width: 50%;" class="list-group">
+                <li class="list-group-item" style="display: flex; justify-content: space-between; align-items: center;">
+                    <h4 style="margin: 2%; color: #083D53;">Total Egresos</h4>
+                    <span id="dynamicTextegreso" style="color: #083D53; font-weight: bold; font-size: 20px;"></span>
+                </li>
+            </ul>
+        </div>
+        <div style="padding-left: 10%; margin-top: 35px;">
+            <div style="width: 50%; border: 1px solid #083D53; padding: 10px;">
+                <h2 style="text-align: center; color: #083D53; font-weight: bold;">Balance</h2>
+                <table style="width: 100%; margin-top: 10px; border: 1px solid #083D53;;">
+                    <tr style="border: 1px solid #083D53;">
+                        <td style="border: 1px solid #083D53; font-weight: bold;"></td>
+                        <td style="border: 1px solid #083D53; font-weight: bold;">Debe</td>
+                        <td style="border: 1px solid #083D53; font-weight: bold;">Haber</td>
+                    </tr>
+                    <tr style="border: 1px solid #083D53;">
+                        <td style="border: 1px solid #083D53; font-weight: bold;">Total de Ingresos</td>
+                        <td style="border: 1px solid #083D53; font-weight: bold;"></td>
+                        <td style="border: 1px solid #083D53; font-weight: bold;"> <span id="dynamicTextingreso1" style="color: #083D53; font-weight: bold; font-size: 15px;"></span> </td>
+                    </tr>
+                    <tr style="border: 1px solid #083D53;">
+                        <td style="border: 1px solid #083D53; font-weight: bold;">Total de Egresos</td>
+                        <td style="border: 1px solid #083D53; font-weight: bold;"><span id="dynamicTextegreso1" style="color: #083D53; font-weight: bold; font-size: 15px;"></span></td>
+                        <td style="border: 1px solid #083D53; font-weight: bold;"></td>
+                    </tr>
+                    <tr style="border: 1px solid #083D53;">
+                        <td style="border: 1px solid #083D53; font-weight: bold;">Balance</td>
+                        <td style="border: 1px solid #083D53; font-weight: bold;"><span id="dynamicTextnegativo" style="color: red; font-weight: bold; font-size: 15px;"></span></td>
+                        <td style="border: 1px solid #083D53; font-weight: bold;"><span id="dynamicTextpositivo" style="color: #083D53; font-weight: bold; font-size: 15px;"></span></td>
+                    </tr>
+                    <tr style="border: 1px solid #083D53;">
+                        <td style="border: 1px solid #083D53; font-weight: bold;">Impuesto</td>
+                        <td style="border: 1px solid #083D53; font-weight: bold;"><span id="dynamicTexttipo" style="color: #083D53; font-weight: bold; font-size: 15px;"></span></td>
+                        <td style="border: 1px solid #083D53; font-weight: bold;"><span id="dynamicTextimpuesto" style="color: #083D53; font-weight: bold; font-size: 15px;"></span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/static/reportes.js"></script>
+</body>
+
+</html>

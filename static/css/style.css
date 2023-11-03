@@ -1,0 +1,192 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url('fuentes/static/Nunito-Regular.ttf') format('truetype');
+}
+
+/*quita el margen negro en las orillas de toda la pagina*/
+body, html {
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Nunito', sans-serif;
+    width: 100%;
+}
+
+/* Estilos generales */
+body {
+    background-color: #f0f0f0; /* Fondo gris claro */
+}
+
+
+/* Estilos para el encabezado */
+.header2 {
+   background-color: #083D53; /* Color para la primera fila (parte superior) */
+    padding: 3px;
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    border: none; 
+    z-index: 1000; /* Asegura que el encabezado esté por encima de otros elementos */
+}
+
+/* Estilos para la primera fila (parte superior) */
+.menu-container {
+    display: flex; /* Hace que los elementos se alineen horizontalmente */
+    justify-content: flex-start; /* Espacio uniforme entre los elementos */
+    position: relative; /* Asegura que el contenido dentro respete la posición de este contenedor */
+    padding: 10px; /* Agrega un espacio interno */
+    background-color: #045271;
+}
+.menu-container2 {
+    display: flex; /* Hace que los elementos se alineen horizontalmente */
+    justify-content: flex-start; /* Espacio uniforme entre los elementos */
+    position: relative; /* Asegura que el contenido dentro respete la posición de este contenedor */
+    padding: 15px; /* Agrega un espacio interno */
+    background-color: #045271;
+}
+.menu-container3 {
+    display: flex; /* Hace que los elementos se alineen horizontalmente */
+    justify-content: flex-start; /* Espacio uniforme entre los elementos */
+    position: relative; /* Asegura que el contenido dentro respete la posición de este contenedor */
+    padding: 10px; /* Agrega un espacio interno */
+    background-color: #045271;
+}
+
+.menu-item {
+    margin: 0 1px; /* Espacio entre los elementos */
+    margin-left: 10px;
+    margin-right: 10px;
+    
+
+}
+
+.menu-item a {
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    color: #fff; /* Cambia el color del texto en los enlaces */
+}
+
+/* Estilos para la segunda fila (parte inferior) */
+.bottom-row h1 {
+    color: white;
+    font-size: 45px;
+    margin: 0;
+    text-align: left;
+    margin: 5px;
+    font-weight: bold;
+}
+
+/*reduccion de imagen de header*/
+.imgheader {
+    width: 60px; /* Ancho deseado en píxeles */
+    height: auto; /* Para mantener la proporción original */
+    margin-left: 25px;
+}
+
+.imgblue{
+    width: 5px;
+    height: auto;
+    margin-left: 25px;
+}
+
+.container {
+    display: flex; /* Utiliza flexbox para dividir en dos columnas */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    height: 87.5vh; /* Toma el 100% de la altura del viewport */
+    margin: 0 auto;  /*Centra el contenedor horizontalmente en la pantalla */
+}
+
+.column {
+    text-align: center; /* Centra el contenido de las columnas horizontalmente */
+    width: 50%;
+}
+
+/* Estilos específicos para el logo */
+.logo {
+    max-width: 45%; /* Ajusta el tamaño máximo del logo */
+    margin-top: 0;
+}
+
+/* Estilos para el texto */
+h1 {
+    font-size: 40px;
+    color: #045271; /* Color de texto */
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 36px;
+    color: #045271; /* Color de texto */
+    margin-top: 10;
+    font-weight: 300;
+}
+p {
+    font-size: 33px;
+    color: #338EB1; /* Color de texto */
+    font-weight: bold;
+    margin-top: 0;
+}
+
+/* Estilos para el formulario */
+.textbox {
+    border: 1px solid #083D53; /* Color del borde azul marino */
+    color: #083D53; /* Color del texto azul marino */
+    width: 60%;
+    padding: 10px;
+    margin: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.button {
+    background-color: #083D53;
+    color: #fff;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.imgcolumn1{
+    width: 70%;
+    max-width: 90%;
+    height: 60%;
+    float: right;
+}
+
+.imgcolumn2{
+    width: 60%;
+    max-width: 80%;
+    height: 80%;
+}
+/* Estilos para la imagen centrada */
+.centered-image {
+    display: block;
+    margin: 0 auto;
+    width:auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos para los mensajes emergentes */
+.popup {
+    display: none;
+    position: absolute;
+    background-color: #f2f2f2;
+    border: 1px solid #d4d4d4;
+    padding: 10px;
+    z-index: 1;
+    width: 200px;
+    text-align: center;
+    top: 95%;
+    left: 33%;
+    transform: translate(-50%, -50%);
+}
+
+/* Estilos para los mensajes de error */
+.error {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}
